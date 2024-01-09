@@ -4,29 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>task-1</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Home</title>
 </head>
 
 <body>
-  <header>
-    <h1>I am h1</h1>
-  </header>
-  <main>
-    <hr />
-    <h2>Lorem ipsum</h2>
-    <p>
-      Lorem ipsum, dolor sit amet <strong>adipisicing
-      </strong> elit. Et maiores sapiente ex necessitatibus nesciunt,
-      <br />quam ratione sunt sequi expedita qui neque consequuntur, nemo atque earum
-      <i>harum</i>,
-      <br />
-      eos quas praesentium facere!
-    </p>
-    <hr />
-  </main>
-  <footer>
-    <small>Here is a footer</small>
-  </footer>
+  <div class="wrapper">
+    <header class="header d-flex ">
+      <a href="./index.html" class="d-flex ">
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/neblio-logo-png-transparent.png" width="60"
+          height="62.175" alt="page logo">
+        <p>Company Name</p>
+      </a>
+      <nav>
+        <ul class="d-flex nav-list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci provident itaque, iusto officiis
+          nesciunt
+          commodi amet, veniam nulla et.</h1>
+        <div class="hero__content d-flex">
+          <p>Quidem assumenda rerum pariatur. Quia cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Quas ea perspiciatis velit. Soluta, tenetur.</p>
+          <p>Quidem assumenda rerum pariatur. Quia cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Quas ea perspiciatis velit. Soluta, tenetur.</p>
+        </div>
+        <img src="https://fastly.picsum.photos/id/5/1440/920.jpg?hmac=nyLgcDQxsanHPhyxedUME97KelBlTrrvo6OoJqslEGw"
+          width="1440" height="920" alt="A man working in his MacBook">
+      </section>
+    </main>
+    <footer>
+      <p class="copyright d-flex">All Rights Reserved &copy;</p>
+    </footer>
+  </div>
 </body>
 
 </html>
