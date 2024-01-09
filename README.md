@@ -9,5 +9,5 @@
   - [x]  Video desctiption next to the video
 3. **Contact Page:**
   - [x]  map iframe
-  - [x]  address
-  - [x]  tel
+  - [x]  address, tel, email
+  - [x]  HTML form with input fields
