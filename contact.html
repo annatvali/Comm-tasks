@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Contact</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header d-flex ">
+      <a href="./index.html" class="d-flex ">
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/neblio-logo-png-transparent.png" width="60"
+          height="62.175" alt="page logo">
+        <p">Company Name</p>
+      </a>
+      <nav>
+        <ul class="d-flex nav-list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="contact-us">
+        <h1>Contact Us</h1>
+        <div class="d-flex">
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47643.65262175529!2d44.70193071866736!3d41.7263816513524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404473177c179825%3A0x720c3a1f563c7168!2z4YOh4YOQ4YOR4YOj4YOg4YOX4YOQ4YOa4YOdLCDhg5fhg5Hhg5jhg5rhg5jhg6Hhg5g!5e0!3m2!1ska!2sge!4v1704801062716!5m2!1ska!2sge"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="contact-us__content">
+            <ul class="contact-info">
+              <li>
+                <a href="https://maps.app.goo.gl/uuJEwisrumVbwBYi8"><span>Address:</span> # Street, City, Country</a>
+              </li>
+              <li>
+                <a href="mailto:company@gmail.com"><span>Email:</span> company@gmail.com</a>
+              </li>
+              <li>
+                <a href="tel:+995555111111"><span>Phone:</span> +995 555111111</a>
+              </li>
+            </ul>
+            <form action="">
+              <fieldset>
+                <legend>Send us an email</legend>
+                <div class="form-control">
+                  <label for="name">Name</label>
+                  <input type="name" id="name" placeholder="Enter your name" required />
+                </div>
+
+                <div class="form-control">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" placeholder="Enter your email" required />
+                </div>
+
+                <div class="form-control">
+                  <label for="message">Message</label>
+                  <textarea id="message" cols="50" rows="8" placeholder="Enter your message" required></textarea>
+                </div>
+                <input type="submit" value="Send" class="submit-btn" />
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p class="copyright d-flex">All Rights Reserved &copy;</p>
+    </footer>
+  </div>
+</body>
+
+</html>
