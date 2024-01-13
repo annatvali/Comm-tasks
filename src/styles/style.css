@@ -1,0 +1,163 @@
+/* Common Styles */
+:root {
+  --color-bg-primary: #1E1F25;
+  --color-btn-primary: #205BF1;
+  --color-text-primary: #ffffff;
+  --color-text-accent-blue: #3924c2;
+  --color-text-accent-orange: #da5f7e;
+  --color-text-accent-light-blue: #56bcce;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+
+  transition: all 0.3s ease-out;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+
+
+  display: flex;
+  flex-direction: column;
+  gap: 6em;
+  background: var(--color-bg-primary);
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4em;
+}
+
+.grid-col-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+
+}
+
+h1 {
+  font-size: 4em;
+}
+
+body{
+  position: relative;
+  margin: 0;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+
+  font-family:monospace;
+}
+
+.header {
+  padding-block: 1em;
+  z-index: 1;
+
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.nav {
+  font-size: 1.2em;
+}
+
+.logo {
+  text-align: center;
+}
+
+.btn-primary {
+  cursor: pointer;
+  justify-self: end;
+
+  background: var(--color-btn-primary);
+  color: var(--color-text-primary);
+  padding: 0.7em 1em;
+  border: none;
+  border-radius: 0.3em;
+
+  font-size: 1.1em;
+  font-weight: 600;
+
+  transition: all 0.3s ease-out;
+}
+
+.bg-img {
+  background: url('../images/splash.png') no-repeat right 4em top -1em;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+}
+
+.hero__content {
+  z-index: 1;
+  max-width: 620px;
+  padding-block: 8em;
+
+  font-size: 1.2em;
+}
+
+.hero__parapgraph {
+  font-size: 1.3em;
+  line-height: 125%;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.5em;
+  z-index: 1;
+}
+
+.accent {
+  transition:all 0.5s ease-in-out;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-text-accent-light-blue),
+    var(--color-text-accent-blue),
+    var(--color-text-accent-orange));
+}
+
+.btn-primary:hover {
+  background: var(--color-text-primary);
+  color: var(--color-btn-primary);
+}
+
+a:hover {
+  color: var(--color-text-accent-light-blue);
+}
+
+.accent:hover {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-text-accent-orange),
+    var(--color-text-accent-light-blue),
+    var(--color-text-accent-blue));
+
+}

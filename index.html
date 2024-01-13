@@ -4,43 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/style.css">
-  <title>Home</title>
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <title>Creative Layout</title>
 </head>
 
 <body>
   <div class="wrapper">
-    <header class="header d-flex ">
-      <a href="./index.html" class="d-flex ">
-        <img src="https://cdn.freebiesupply.com/logos/large/2x/neblio-logo-png-transparent.png" width="60"
-          height="62.175" alt="page logo">
-        <p>Company Name</p>
-      </a>
-      <nav>
-        <ul class="d-flex nav-list">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./about.html">About Us</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+    <header class="header grid-col-3">
+      <nav class="nav">
+        <ul class="d-flex">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <a class="logo" href="./index.html">
+        <img src="./src/images/logo.png" width="116" height="32" alt="Quickit logo">
+      </a>
+      <button class="btn-primary">Sign In</button>
     </header>
     <main>
-      <section class="hero">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci provident itaque, iusto officiis
-          nesciunt
-          commodi amet, veniam nulla et.</h1>
-        <div class="hero__content d-flex">
-          <p>Quidem assumenda rerum pariatur. Quia cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Quas ea perspiciatis velit. Soluta, tenetur.</p>
-          <p>Quidem assumenda rerum pariatur. Quia cupiditate Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Quas ea perspiciatis velit. Soluta, tenetur.</p>
+      <section class="hero d-flex">
+        <div class="hero__content flex-col">
+          <h1><span class="accent">Welcome</span> to the Future of Landings</h1>
+          <p class="hero__parapgraph">Create screens wright in your Figma. Connect blocks, create awesome landings. Yes,
+            it just takes a few
+            minutes!
+          </p>
+          <button class="btn-primary">Download UI kit</button>
         </div>
-        <img src="https://fastly.picsum.photos/id/5/1440/920.jpg?hmac=nyLgcDQxsanHPhyxedUME97KelBlTrrvo6OoJqslEGw"
-          width="1440" height="920" alt="A man working in his MacBook">
+        <div class="bg-img"></div>
       </section>
     </main>
     <footer>
-      <p class="copyright d-flex">All Rights Reserved &copy;</p>
+      <a href="https://www.figma.com/community/file/1182751281654573545">&copy; Microais</a>
     </footer>
   </div>
 </body>
