@@ -5,41 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./src/styles/style.css">
-  <title>Creative Layout</title>
+  <title>Geo Flag</title>
 </head>
 
 <body>
   <div class="wrapper">
-    <header class="header grid-col-3">
-      <nav class="nav">
-        <ul class="d-flex">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Team</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <a class="logo" href="./index.html">
-        <img src="./src/images/logo.png" width="116" height="32" alt="Quickit logo">
-      </a>
-      <button class="btn-primary">Sign In</button>
-    </header>
-    <main>
-      <section class="hero d-flex">
-        <div class="hero__content flex-col">
-          <h1><span class="accent">Welcome</span> to the Future of Landings</h1>
-          <p class="hero__parapgraph">Create screens wright in your Figma. Connect blocks, create awesome landings. Yes,
-            it just takes a few
-            minutes!
-          </p>
-          <button class="btn-primary">Download UI kit</button>
+    <div class="flag__wrapper flex">
+      <div class="flag">
+        <div class="cross cross--medium flex">
+          <div class="line line--medium line--medium--vertical"></div>
+          <div class="line line--medium line--medium--horizontal"></div>
         </div>
-        <div class="bg-img"></div>
-      </section>
-    </main>
-    <footer>
-      <a href="https://www.figma.com/community/file/1182751281654573545">&copy; Microais</a>
-    </footer>
+        <div class="cross cross--small top-left">
+          <div class="line--small--vertical"></div>
+          <div class="line--small--horizontal"></div>
+        </div>
+        <div class="cross cross--small top-right">
+          <div class="line--small--vertical"></div>
+          <div class="line--small--horizontal"></div>
+        </div>
+        <div class="cross cross--small bottom-left">
+          <div class="line--small--vertical"></div>
+          <div class="line--small--horizontal"></div>
+        </div>
+        <div class="cross cross--small bottom-right">
+          <div class="line--small--vertical"></div>
+          <div class="line--small--horizontal"></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper letters-wrapper">
+      <div class="container-top">
+        <p class="top-letter">F</p>
+        <p class="top-letter">L</p>
+        <p class="top-letter">A</p>
+        <p class="top-letter">G</p>
+      </div>
+      <div class="container-bottom">
+        <p class="bottom-letter">A</p>
+        <p class="bottom-letter">N</p>
+        <p class="bottom-letter">I</p>
+        <p class="bottom-letter">M</p>
+        <p class="bottom-letter">A</p>
+        <p class="bottom-letter">T</p>
+        <p class="bottom-letter">I</p>
+        <p class="bottom-letter">O</p>
+        <p class="bottom-letter">N</p>
+      </div>
+    </div>
   </div>
 </body>
 
