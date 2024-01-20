@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'neueBold';
+  src: url('./fonts/tt_firs_neue/TT\ Firs\ Neue\ Trial\ Bold.ttf');
+}
+@font-face {
+  font-family: 'neueMedium';
+  src: url('./fonts/tt_firs_neue/TT\ Firs\ Neue\ Trial\ Medium.ttf');
+}
+@font-face {
+  font-family: 'neueRegular';
+  src: url('./fonts/tt_firs_neue/TT\ Firs\ Neue\ Trial\ Regular.ttf');
+}
+@font-face {
+  font-family: 'neueLight';
+  src: url('./fonts/tt_firs_neue/TT\ Firs\ Neue\ Trial\ Light.ttf');
+}
+@font-face {
+  font-family: 'neueThin';
+  src: url('./fonts/tt_firs_neue/TT\ Firs\ Neue\ Trial\ Thin.ttf');
+}
+
+.font-18 {
+  font-size: 18px;
+}
+.font-24 {
+  font-size: 24px;
+}
+.font-36 {
+  font-size: 36px;
+}
+.font-48 {
+  font-size: 48px;
+}
+.font-64 {
+  font-size: 64px;
+}
+.font-96 {
+  font-size: 96px;
+}
+.font-274 {
+  font-size: 274px;
+}
+.neueThin {
+  font-family: 'neueThin';
+}
+.neueLight {
+  font-family: 'neueLight';
+}
+.light {
+  font-weight: 100;
+}
+.neueRegular {
+  font-family: 'neueRegular';
+}
+.neueBold {
+  font-family: 'neueBold';
+}
+.bold {
+  font-weight: bold;
+}
+.text-center {
+  text-align: center;
+}
