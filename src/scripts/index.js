@@ -36,15 +36,14 @@ for (let i = 0; i < arr2.length; i++) {
 // მაღაზიაში არის 50 ლარზე მეტი ესეიგი ძვირია თუ 20-50 დიაპაზონშია მოქცეული
 // საშუალო თუ ნაკლები იაფი)
 
-const calculatePrice = () => {
-  const initialPrice = 48;
+const calculatePrice = (initialPrice) => {
   const VAT = 0.18;
   const price = initialPrice + initialPrice * VAT;
   return price;
 };
 
-const display = (productName, priceFunction) => {
-  const price = priceFunction();
+const display = (productName, calculatePrice) => {
+  const price = calculatePrice;
   let priceDescription = '';
 
   if (price > 50) {
@@ -58,7 +57,7 @@ const display = (productName, priceFunction) => {
   console.log(`${productName}ს ფასია: ${price}ლ, რაც ${priceDescription}`);
 };
 
-display('პროდუქტი', calculatePrice);
+display('პროდუქტი', calculatePrice(70));
 
 // 3) მოცემული მასივიდან [ 15,53,22,198,10,28,16,70,33,951 ] დაბეჭდეთ ყველაზე დიდი რიცხვი
 
