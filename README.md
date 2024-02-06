@@ -1,8 +1,8 @@
-# task-3
+# task-10
 
-## **Animations with HTML & CSS**
+## Objects and template literals
+ - [x] loop over product object items
+ - [x] create items' list
+ - [x] display inside HTML document
 
-1. **Flag Animation**
-2. **Text Animation**
-
-![flag-animation](https://github.com/annatvali/Comm-tasks/assets/110423142/8b258a99-5c03-4b48-bc0f-a07f752fd849)
+<img src="https://github.com/annatvali/Comm-tasks/assets/110423142/ace8d4f6-640d-4bea-a591-3f24d3fec4b5" width="300" />
