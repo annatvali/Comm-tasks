@@ -8,34 +8,29 @@ fetch(URL)
     return response.json();
   })
   .then((data) => {
-    createCards(data);
-    // <div class="products__item">
-    //   <img src="${product.image}" height="240" alt="${product.title}" />
-    //   <h2>${product.title}</h2>
-    //   <p>Category: ${product.category}</p
-    //   <p>${product.description}</p>
-    //   <p class="accent">Price: ${product.price}$</p>
-    //   <p>Rating: ${product.rating.rate}/5 (${product.rating.count} vote)</p>
-    // </div>
-    // `;
-    // const productContainer = document.querySelector('.products');
-    // productContainer.innerHTML += productCards;
+    const productCards = createCards(data);
+    displayCards(productCards);
   })
   .catch((err) => console.error(`Fetch problem: ${err.message}`));
 
-function createCards(data) {
+const createCards = (data) => {
+  let productCards = '';
   data.forEach((product) => {
-    const productCards = `
+    productCards += `
       <div class="products__item">
         <img src="${product.image}" height="240" alt="${product.title}" />
         <h2>${product.title}</h2>
-        <p>Category: ${product.category}</p
+        <p>Category: ${product.category}</p>
         <p>${product.description}</p>
         <p class="accent">Price: ${product.price}$</p>
         <p>Rating: ${product.rating.rate}/5 (${product.rating.count} vote)</p>
       </div>
       `;
-    const productContainer = document.querySelector('.products');
-    productContainer.innerHTML += productCards;
   });
-}
+  return productCards;
+};
+
+const displayCards = (productCards) => {
+  const productContainer = document.querySelector('.products');
+  productContainer.innerHTML += productCards;
+};
