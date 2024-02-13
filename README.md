@@ -1,7 +1,7 @@
-# task-11
+# task-12
 
-## Nested Objects and DOM
+## Async functions, fetch API
 
-- [x] loop over nested object items
-- [x] create items' cards
-- [x] display inside HTML document
+- [x] use Async await
+- [x] filter movie list
+- [x] redirect to details page
