@@ -1,6 +1,6 @@
-# task-12
+# task- 12
 
-## Async functions, fetch API
+##  Async functions, fetch API
 
 - [x] use Async await
 - [x] filter movie list
