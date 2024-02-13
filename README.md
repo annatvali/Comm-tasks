@@ -5,3 +5,4 @@
 - [x] use Async await
 - [x] filter movie list
 - [x] redirect to details page
+
