@@ -1,154 +1,123 @@
-const customers = {
-  Molly: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Jasmine',
-    email: 'address@gmail.com',
-    age: 31,
-    address: {
-      street: '123 Street Ave',
-      city: 'Ithaca',
-      state: 'New York',
-    },
-  },
-  David: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Midnight',
-    email: 'address2@hotmail.com',
-    age: 30,
-    address: {
-      street: '321 Avenue Way',
-      city: 'San Diego',
-      state: 'California',
-    },
-  },
-  John: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Pepper',
-    email: 'john@example.com',
-    age: 35,
-    address: {
-      street: '456 John St',
-      city: 'Los Angeles',
-      state: 'California',
-    },
-  },
-  Sarah: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Toby',
-    email: 'sarah@example.com',
-    age: 28,
-    address: {
-      street: '789 Sarah Ave',
-      city: 'Chicago',
-      state: 'Illinois',
-    },
-  },
-  Michael: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Lucky',
-    email: 'michael@example.com',
-    age: 40,
-    address: {
-      street: '1011 Michael Blvd',
-      city: 'Houston',
-      state: 'Texas',
-    },
-  },
-  Emma: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Miss%20kitty',
-    email: 'emma@example.com',
-    age: 25,
-    address: {
-      street: '1213 Emma Ln',
-      city: 'Phoenix',
-      state: 'Arizona',
-    },
-  },
-  Daniel: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Precious',
-    email: 'daniel@example.com',
-    age: 45,
-    address: {
-      street: '1415 Daniel Dr',
-      city: 'Philadelphia',
-      state: 'Pennsylvania',
-    },
-  },
-  Olivia: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Trouble',
-    email: 'olivia@example.com',
-    age: 32,
-    address: {
-      street: '1617 Olivia Rd',
-      city: 'San Antonio',
-      state: 'Texas',
-    },
-  },
-  William: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Pepper',
-    email: 'william@example.com',
-    age: 38,
-    address: {
-      street: '1819 William St',
-      city: 'San Jose',
-      state: 'California',
-    },
-  },
-  Ava: {
-    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Cleo',
-    email: 'ava@example.com',
-    age: 27,
-    address: {
-      street: '2021 Ava Ave',
-      city: 'Austin',
-      state: 'Texas',
-    },
-  },
-};
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1';
+const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=';
 
-const createCustomerCard = (name, details) => {
-  if (!name || !details) throw new Error('Name and details are required');
+const root = document.querySelector('body');
+const itemsContainer = createDiv('item-container');
+root.append(itemsContainer);
 
-  const customerDiv = document.createElement('div');
-  customerDiv.className = 'customer';
-
-  const img = document.createElement('img');
-  img.src = details.image;
-  img.alt = name;
-
-  const h2 = document.createElement('h2');
-  h2.textContent = name;
-
-  const emailP = document.createElement('p');
-  emailP.textContent = `Email: ${details.email}`;
-
-  const ageP = document.createElement('p');
-  ageP.textContent = `Age: ${details.age}`;
-
-  const addressP = document.createElement('p');
-  addressP.textContent = `Address: ${details.address.street}, ${details.address.city}, ${details.address.state}`;
-
-  customerDiv.append(img, h2, emailP, ageP, addressP);
-
-  return customerDiv;
-};
-
-const createCustomerCards = (customers) => {
-  const fragment = document.createDocumentFragment();
-  Object.entries(customers).map(([name, details]) => {
-    const customerCard = createCustomerCard(name, details);
-    fragment.append(customerCard);
-  });
-  return fragment;
-};
-
-const renderCustomers = (customers) => {
-  const customerCards = createCustomerCards(customers);
-  const customerContainer = document.querySelector('body');
-  customerContainer.append(customerCards);
-};
-
-const init = () => {
-  try {
-    renderCustomers(customers);
-  } catch (error) {
-    console.error(error);
+async function fetchData(url) {
+  const response = await fetch(url);
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
-};
+  return await response.json();
+}
 
+function createDiv(className) {
+  const div = document.createElement('div');
+  div.classList.add(className);
+  return div;
+}
+
+function createCard(movie, isDetailed = false) {
+  const { title, overview, poster_path, vote_average, id } = movie;
+  const card = createDiv('card');
+  const ratingClass = getRatingClass(vote_average);
+  card.innerHTML = `
+    <img src="${IMG_PATH + poster_path}" alt="${title}">
+    <div class="card__details">
+      <div>
+        <h3 class="card__title">${title}</h3>
+        <span class="card__rating ${ratingClass}">${vote_average.toFixed(1)}</span>
+      </div>
+      <div>
+        <h3 class="card__overview">Overview</h3>
+        <p>${overview}</p>
+      </div>
+    </div>
+  `;
+  if (!isDetailed) {
+    card.addEventListener('click', () => redirectToDetails(id));
+  }
+  return card;
+}
+
+function renderCards(data) {
+  const cardList = createDiv('card-list');
+  data.results.forEach(movie => {
+    const card = createCard(movie);
+    cardList.append(card);
+  });
+  itemsContainer.innerHTML = '';
+  itemsContainer.append(cardList);
+}
+
+function redirectToDetails(id) {
+  window.location.href = `index.html?id=${id}`;
+}
+
+async function init() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const movieId = urlParams.get('id');
+  if (movieId) {
+    const itemData = await fetchData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=3fd2be6f0c70a2a598f084ddfb75487c`);
+    const card = createCard(itemData, true);
+    itemsContainer.innerHTML = '';
+    itemsContainer.append(card);
+    card.classList.remove('card');
+    card.classList.add('card_large');
+    const backHomeLink = document.createElement('a');
+    backHomeLink.classList.add('back-home-link');
+    backHomeLink.href = 'index.html';
+    backHomeLink.textContent = '🔙 Back Home';
+    root.insertBefore(backHomeLink, searchForm.form);
+  } else {
+    const data = await fetchData(API_URL);
+    renderCards(data);
+  }
+}
+
+function createSearchForm() {
+  const form = document.createElement('form');
+  form.classList.add('search-form');
+  form.setAttribute('id', 'form');
+  const search = document.createElement('input');
+  search.classList.add('search-form__input');
+  search.setAttribute('id', 'search');
+  search.setAttribute('type', 'text');
+  search.setAttribute('placeholder', 'Search...');
+  const button = document.createElement('button');
+  button.classList.add('search-form__button');
+  button.textContent = 'Search';
+  form.append(search);
+  form.append(button);
+  root.insertBefore(form, itemsContainer);
+  return { form, search, button };
+}
+
+function handleSearch({ form, search }) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const searchTerm = search.value;
+    if (searchTerm.trim()) {
+      const data = await fetchData(SEARCH_API + searchTerm);
+      renderCards(data);
+      search.value = '';
+    }
+  });
+}
+
+function getRatingClass(vote) {
+  if(vote >= 7) {
+    return 'green';
+  } else if(vote >= 6) {
+    return 'yellow';
+  } else {
+    return 'red';
+  }
+}
+
+const searchForm = createSearchForm();
+handleSearch(searchForm);
 init();
